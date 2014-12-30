@@ -14,6 +14,12 @@ public class Person {
     private String lastName;
     private char gender;
 
+    public Person(String firstName, String lastName, char gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+    }   
+    
     public String getFirstName() {
         return firstName;
     }
