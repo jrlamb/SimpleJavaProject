@@ -75,7 +75,6 @@ public class AppTest {
         double expResult = 25.142857142857142;
         double result = instance.calculateIMC(person);
         assertEquals(expResult, result, 0.0);
-        
         // TODO review the generated test code and remove the default call to fail.
         assertNotNull(result);
     }
