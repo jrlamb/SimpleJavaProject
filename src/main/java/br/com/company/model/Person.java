@@ -96,5 +96,11 @@ public class Person {
     public void setHeight(double height) {
         this.height = height;
     }
-
+    
+    /**
+     * @return the IMC
+     */
+    public double getIMC() {
+        return this.getWeight() / (this.getHeight() * this.getHeight());
+    }
 }

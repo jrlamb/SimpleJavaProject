@@ -19,38 +19,23 @@ import static org.junit.Assert.*;
  */
 public class AppTest {
     
-    private static App instance;
-    private static Person person;
-    
     public AppTest() {
-        System.out.println("Called a AppTest");
     }
     
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("setUpClass called : " + System.currentTimeMillis());
-        instance = new App();
-        person = new Person();
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("tearDownClass called : " + System.currentTimeMillis());
     }
     
     @Before
     public void setUp() {
-        System.out.println("setUp called : " + System.currentTimeMillis());
-        person.setFirstName("Testing firsname");
-        person.setLastName("Testing lastname");
-        person.setGender('m');
-        person.setHeight(1.75);
-        person.setWeight(77.0);
     }
     
     @After
     public void tearDown() {
-        System.out.println("tearDown called : " + System.currentTimeMillis());
     }
 
     /**
@@ -58,39 +43,38 @@ public class AppTest {
      */
     @Test
     public void testMain() {
-        System.out.println("testMain called : " + System.currentTimeMillis());
+        System.out.println("main");
         String[] args = null;
         App.main(args);
-        System.out.println("testMain end : " + System.currentTimeMillis());
-        // TODO review the generated test code and remove the default call to fail.        
-        //fail("Failed at testMain.");
+        // TODO review the generated test code and remove the default call to fail.
+        fail("This is an excpected error.");
     }
 
     /**
-     * Test of calculateIMC method, of class App.
+     * Test of printIMCOnConsole method, of class App.
      */
     @Test
-    public void testCalculateIMCSuccess() {
-        System.out.println("calculateIMC called : " + System.currentTimeMillis());
-        double expResult = 25.142857142857142;
-        double result = instance.calculateIMC(person);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        assertNotNull(result);
+    public void testPrintIMCOnConsole() {
+        System.out.println("printIMCOnConsole");
+        Person p = null;
+        App instance = new App();
+        try{
+            instance.printIMCOnConsole(p);
+        }catch(Exception e){
+            throw e;
+        }
+        assertNotNull(p);
     }
     /**
-     * Test of calculateIMC method, of class App.
+     * Test of testPrintIMCOnConsoleWithouError method, of class App.
      */
     @Test
-    public void testCalculateIMCError() {
-        System.out.println("calculateIMC called : " + System.currentTimeMillis());
-        double expResult = 0.0;
-        double result = instance.calculateIMC(person);
-        assertEquals(expResult, result, 0.0);
-        
-        System.out.println("MyTest Jenkins email");
-        // TODO review the generated test code and remove the default call to fail.
-        fail("Failed at testCalculateIMCSuccess.");
+    public void testPrintIMCOnConsoleWithouError() {
+        System.out.println("testPrintIMCOnConsoleWithouError");
+        Person p = new Person("Juliano Rodrigo", "Lamb", 'm', 1.81, 82.1);
+        App instance = new App();
+        instance.printIMCOnConsole(p);
+        assertNotNull(p);
     }
     
 }

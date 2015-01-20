@@ -25,12 +25,14 @@ public class App {
         informations.append("\n\tGender: ").append(person.getGender());
         informations.append("\n\tHeight: ").append(person.getHeight());
         informations.append("\n\tWeight: ").append(person.getWeight());
+        informations.append("\n\tIMC: ").append(person.getIMC());
         informations.append("\n}");
         
         System.out.println(informations.toString());
                 
-    }    
-    public double calculateIMC(Person person){
-        return person.getWeight() / (person.getHeight() * person.getHeight());
+    }
+    public void printIMCOnConsole(Person p){
+    
+        System.out.println(p.getIMC());
     }
 }
